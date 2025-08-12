@@ -7,68 +7,31 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: rgb(18, 18, 18);
+      background: #000000;
       height: 100%;
       width: 100%;
-      overflow: auto; /* allow scroll if screen height is smaller than 1350px */
+      overflow: hidden;
     }
-
     .canvas-wrapper {
       position: relative;
       width: 1080px;
       height: 1920px;
-      margin: 0 auto; /* center horizontally */
+      margin: 0 auto;
+      background: #000000;
     }
-
-    /* On tall screens, center vertically too */
-    @media (min-height: 1350px) {
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden; /* no scroll when fully visible */
-      }
-    }
-
     #canvas {
       display: block;
-      background: rgb(0, 0, 0);
       width: 1080px;
-      height: 1350px;
-    }
-
-    /* Shared logo styles */
-    .logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    /* Center logo */
-    #logo1 {
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px; /* Adjust size as needed */
-    }
-
-    /* Bottom-center logo */
-    #logo2 {
-      bottom: 332px; /* 32px from bottom */
-      width: 140px; /* Adjust size as needed */
+      height: 1920px;
     }
   </style>
 </head>
 <body>
   <div class="canvas-wrapper">
-    <canvas id="canvas" width="1080" height="1350"></canvas>
-
-    <!-- Overlay logos -->
-    <img id="logo1" class="logo" src="assets/logo1.png" alt="Logo 1">
-    <img id="logo2" class="logo" src="assets/logo2.png" alt="Logo 2">
+    <canvas id="canvas" width="1080" height="1920"></canvas>
   </div>
 
+  <!-- Your Three.js scene -->
   <script type="module" src="src/main.js"></script>
 </body>
 </html>
